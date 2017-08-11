@@ -3,9 +3,14 @@
 // This is the container for all progress bar-related components/elements.
 .video-js .vjs-progress-control {
   cursor: pointer;
-  @include flex(auto);
-  @include display-flex(center);
-  min-width: 4em;
+  height: 3px;
+  // @include flex(auto);
+  // @include display-flex(center);
+  width:100%;
+  position: absolute;
+  top:-5px;
+  left:0;
+  right: 0;
 }
 
 .vjs-live .vjs-progress-control {
@@ -22,7 +27,7 @@
 .video-js .vjs-progress-holder {
   @include flex(auto);
   @include transition(all 0.2s);
-  height: 0.3em;
+  height: 4px;
 }
 
 .video-js .vjs-progress-control .vjs-progress-holder {
@@ -31,13 +36,18 @@
   // reason is that the progress holder font-size changes on hover. With the
   // default em-based margins, this means it gets narrower and causes issues
   // with mouseover behaviors/math.
-  margin: 0 10px;
+  margin: 0;
 }
 
 // This increases the size of the progress holder so there is an increased
 // hit area for clicks/touches.
 .video-js .vjs-progress-control:hover .vjs-progress-holder {
+  height: 8px;
   font-size: 1.666666666666666666em;
+}
+
+.video-js .vjs-progress-control:hover .vjs-play-progress:before{
+  display: block;
 }
 
 // .vjs-play-progress / PlayProgressBar and .vjs-load-progress / LoadProgressBar
@@ -61,33 +71,36 @@
 }
 
 .video-js .vjs-play-progress {
-  background-color: $primary-foreground-color;
+  background-color: $warning-foreground-color;
   @extend .vjs-icon-circle;
 
   // Progress handle
   &:before {
+    display: none;
     font-size: 0.9em;
     position: absolute;
     right: -0.5em;
-    top: -0.333333333333333em;
+    top: -0.1112222em;
     z-index: 1;
   }
 }
 
+
+
 .video-js .vjs-load-progress {
   // For IE8, we'll lighten the color
-  background: lighten($secondary-background-color, 25%);
+  // background: lighten($primary-foreground-color, 25%);
   // Otherwise, we'll rely on stacked opacities
-  background: rgba($secondary-background-color, $secondary-background-transparency);
+  // background: rgba($primary-foreground-color, $primary-background-transparency);
 }
 
 // There are child elements of the load progress bar that represent the
 // specific time ranges that have been buffered.
 .video-js .vjs-load-progress div {
   // For IE8, we'll lighten the color
-  background: lighten($secondary-background-color, 50%);
+  background: lighten($primary-foreground-color, 30%);
   // Otherwise, we'll rely on stacked opacities
-  background: rgba($secondary-background-color, 0.75);
+  background: rgba($primary-foreground-color, 0.3);
 }
 
 // .vjs-time-tooltip
@@ -98,7 +111,7 @@
 // control.
 .video-js .vjs-time-tooltip {
   @include background-color-with-alpha(#fff, 0.8);
-  @include border-radius(0.3em);
+  @include border-radius(1px);
   color: #000;
 
   // By floating the tooltips to the right, their right edge becomes aligned
@@ -115,7 +128,7 @@
   padding: 6px 8px 8px 8px;
   pointer-events: none;
   position: relative;
-  top: -3.4em;
+  top: -35px;
   visibility: hidden;
   z-index: 1;
 }
@@ -167,5 +180,5 @@
 
 .vjs-mouse-display .vjs-time-tooltip {
   color: #fff;
-  @include background-color-with-alpha(#000, 0.8);
+  @include background-color-with-alpha(#000, 0.7);
 }

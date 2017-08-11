@@ -65,7 +65,7 @@ class RemainingTimeDisplay extends Component {
     if (this.textNode_) {
       this.contentEl_.removeChild(this.textNode_);
     }
-    this.textNode_ = document.createTextNode(` -${this.formattedTime_ || '0:00'}`);
+    this.textNode_ = document.createTextNode(`${this.formattedTime_ || '0:00'}`);
     this.contentEl_.appendChild(this.textNode_);
   }
 

@@ -2,27 +2,29 @@
 // It's used on both real buttons (play button)
 // and div buttons (menu buttons)
 .video-js .vjs-control {
+  float: left;
   position: relative;
   text-align: center;
   margin: 0;
   padding: 0;
   height: 100%;
   width: 4em;
-  @include flex(none);
-
+  // @include flex(none);
 }
-.vjs-button > .vjs-icon-placeholder:before {
+
+.vjs-button>.vjs-icon-placeholder:before {
   font-size: 1.8em;
-  line-height: 1.67;
+  line-height: $control-height;
 
   @extend %icon-default;
+  font-size: 26px;
 }
 
 // Replacement for focus outline
 .video-js .vjs-control:focus:before,
 .video-js .vjs-control:hover:before,
 .video-js .vjs-control:focus {
-  text-shadow: 0em 0em 1em rgba($primary-foreground-color, 1);
+  text-shadow: 0em 0em 1em rgba($warning-foreground-color, 1);
 }
 
 // Hide control text visually, but have it available for screenreaders
@@ -34,4 +36,23 @@
 .vjs-no-flex .vjs-control {
   display: table-cell;
   vertical-align: middle;
+}
+
+.vjs-no-bottom-mask{
+  display: none;
+}
+
+.vjs-bottom-mask {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 98px;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity .5s cubic-bezier(0, 0, .2, 1);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADGCAYAAAAT+OqFAAAAdklEQVQoz42QQQ7AIAgEF/T/D+kbq/RWAlnQyyazA4aoAB4FsBSA/bFjuF1EOL7VbrIrBuusmrt4ZZORfb6ehbWdnRHEIiITaEUKa5EJqUakRSaEYBJSCY2dEstQY7AuxahwXFrvZmWl2rh4JZ07z9dLtesfNj5q0FU3A5ObbwAAAABJRU5ErkJggg==);
+  background-repeat: repeat-x;
+  background-position: 0 bottom;
 }

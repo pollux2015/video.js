@@ -1,7 +1,7 @@
 .video-js .vjs-time-control {
   @include flex(none);
   font-size: 1em;
-  line-height: 3em;
+  line-height: $line-height;
   min-width: 2em;
   width: auto;
   padding-left: 1em;
@@ -26,7 +26,19 @@
 
 .video-js .vjs-duration,
 .vjs-no-flex .vjs-duration {
-  display: none;
+  padding-right: 0;
+}
+.video-js .vjs-duration,
+.video-js .vjs-remaining-time{
+  font-size: 12px;
+}
+
+
+.video-js .vjs-remaining-time  {
+  padding-left: 0;
+  color: #999;
+  padding-left: 3px;
+  color: rgba(196, 185, 185, 0.5);
 }
 
 .vjs-time-divider {

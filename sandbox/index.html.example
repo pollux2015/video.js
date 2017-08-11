@@ -29,9 +29,7 @@
   <video id="vid1" class="video-js vjs-default-skin" controls preload="auto" width="640" height="264"
       poster="http://vjs.zencdn.net/v/oceans.png"
       data-setup='{}'>
-    <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-    <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">
-    <source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
+    <source src="http://113.96.154.150/vlive.qqvideo.tc.qq.com/AivViJRK79ynRjFKmMvBv6DIFxM1Bq-ImO8Q0gKhMWy0/o0024hq5202.p212.3.mp4?sdtfrom=v1010&guid=860621fa7255cedb379d01fe3c5d0706&vkey=73D2C022CA2F9C4D35605F86AD0D99202269FE26135187DC3771191A33A0705FB65979844AF5AB24736C3DC5B00BB92E3D127E9925EDCCD8EB28023A1CDAFC243ECCD4E25A116D45855BE762F40B21402E958DE8555B68BEECAE1146CD2FBC1E8D31CAB57C23B4419422BD466DFFA39CB8BE61CAD0FB5771&locid=39f45a7b-3738-4750-9fa4-aa57bd4309d9&size=24167652&ocid=2487621804#t=256" type="video/mp4">
     <track kind="captions" src="../docs/examples/shared/example-captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
     <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
   </video>

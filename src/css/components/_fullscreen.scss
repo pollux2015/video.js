@@ -1,6 +1,7 @@
 .video-js .vjs-fullscreen-control {
   cursor: pointer;
   @include flex(none);
+  float:right;
 
   & .vjs-icon-placeholder {
     @extend .vjs-icon-fullscreen-enter;

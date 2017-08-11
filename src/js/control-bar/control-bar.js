@@ -5,22 +5,23 @@ import Component from '../component.js';
 
 // Required children
 import './play-toggle.js';
-import './time-controls/current-time-display.js';
+// import './time-controls/current-time-display.js';
+// import './text-track-controls/chapters-button.js';
+// import './text-track-controls/descriptions-button.js';
+// import './text-track-controls/subtitles-button.js';
+// import './text-track-controls/captions-button.js';
+// import './text-track-controls/subs-caps-button.js';
+// import './audio-track-controls/audio-track-button.js';
+// import './time-controls/time-divider.js';
+// import './live-display.js';
+// import './spacer-controls/custom-control-spacer.js';
 import './time-controls/duration-display.js';
-import './time-controls/time-divider.js';
 import './time-controls/remaining-time-display.js';
-import './live-display.js';
 import './progress-control/progress-control.js';
 import './fullscreen-toggle.js';
 import './volume-panel.js';
-import './text-track-controls/chapters-button.js';
-import './text-track-controls/descriptions-button.js';
-import './text-track-controls/subtitles-button.js';
-import './text-track-controls/captions-button.js';
-import './text-track-controls/subs-caps-button.js';
-import './audio-track-controls/audio-track-button.js';
 import './playback-rate-menu/playback-rate-menu-button.js';
-import './spacer-controls/custom-control-spacer.js';
+// import './set-controls/set.js';
 
 /**
  * Container of main controls.
@@ -55,21 +56,25 @@ class ControlBar extends Component {
  */
 ControlBar.prototype.options_ = {
   children: [
-    'playToggle',
-    'volumePanel',
-    'currentTimeDisplay',
-    'timeDivider',
-    'durationDisplay',
     'progressControl',
-    'liveDisplay',
+    'playToggle',
+    
+    'currentTimeDisplay',
+    // 'timeDivider',
+    'durationDisplay',
+
+    // 'liveDisplay',
     'remainingTimeDisplay',
-    'customControlSpacer',
-    'playbackRateMenuButton',
-    'chaptersButton',
-    'descriptionsButton',
-    'subsCapsButton',
-    'audioTrackButton',
-    'fullscreenToggle'
+    'volumePanel',
+    // 'customControlSpacer',
+    // 'playbackRateMenuButton',
+    // 'chaptersButton',
+    // 'descriptionsButton',
+    // 'subsCapsButton',
+    // 'audioTrackButton',
+    'fullscreenToggle',
+    // 'SetBar'
+    
   ]
 };
 

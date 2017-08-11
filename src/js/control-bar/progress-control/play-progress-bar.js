@@ -5,7 +5,7 @@ import Component from '../../component.js';
 import {IE_VERSION, IS_IOS, IS_ANDROID} from '../../utils/browser.js';
 import formatTime from '../../utils/format-time.js';
 
-import './time-tooltip';
+// import './time-tooltip';
 
 /**
  * Used by {@link SeekBar} to display media playback progress as part of the
@@ -52,11 +52,11 @@ class PlayProgressBar extends Component {
         this.player_.currentTime();
 
       const content = formatTime(time, this.player_.duration());
-      const timeTooltip = this.getChild('timeTooltip');
+      // const timeTooltip = this.getChild('timeTooltip');
 
-      if (timeTooltip) {
-        timeTooltip.update(seekBarRect, seekBarPoint, content);
-      }
+      // if (timeTooltip) {
+      //   timeTooltip.update(seekBarRect, seekBarPoint, content);
+      // }
     });
   }
 }
@@ -72,9 +72,9 @@ PlayProgressBar.prototype.options_ = {
 };
 
 // Time tooltips should not be added to a player on mobile devices or IE8
-if ((!IE_VERSION || IE_VERSION > 8) && !IS_IOS && !IS_ANDROID) {
-  PlayProgressBar.prototype.options_.children.push('timeTooltip');
-}
+// if ((!IE_VERSION || IE_VERSION > 8) && !IS_IOS && !IS_ANDROID) {
+//   PlayProgressBar.prototype.options_.children.push('timeTooltip');
+// }
 
 Component.registerComponent('PlayProgressBar', PlayProgressBar);
 export default PlayProgressBar;

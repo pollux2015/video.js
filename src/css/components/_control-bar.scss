@@ -1,18 +1,24 @@
+.video-js .vjs-fullscreen-control {
+  float: right !important;
+}
+
 .video-js .vjs-control-bar {
+  z-index: 10;
   display: none;
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 3.0em;
+  height: $control-height;
 
-  @include background-color-with-alpha($primary-background-color, $primary-background-transparency);
+  // @include background-color-with-alpha($primary-background-color, $primary-background-transparency);
 }
 
 // Video has started playing
 .vjs-has-started .vjs-control-bar {
-  @include display-flex;
+  // @include display-flex;
+  display: block;
   visibility: visible;
   opacity: 1;
 
@@ -28,7 +34,6 @@
 
   $trans: visibility 1.0s, opacity 1.0s;
   @include transition($trans);
-
 }
 
 .vjs-controls-disabled .vjs-control-bar,

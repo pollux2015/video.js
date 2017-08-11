@@ -412,6 +412,12 @@ class Player extends Component {
     } else {
       this.addClass('vjs-controls-disabled');
     }
+    
+    // Add mask
+    var mask = Dom.createEl('div', {}, {
+      'class': 'vjs-bottom-mask'
+    });
+    Dom.appendContent(this.el_, mask);
 
     // Set ARIA label and region role depending on player type
     this.el_.setAttribute('role', 'region');
@@ -1450,9 +1456,12 @@ class Player extends Component {
    * @listens Player#fullscreenchange
    */
   handleFullscreenChange_() {
+    let mask = Dom.$('.vjs-bottom-mask');
     if (this.isFullscreen()) {
+      Dom.addClass(mask, 'vjs-no-bottom-mask')
       this.addClass('vjs-fullscreen');
     } else {
+      Dom.removeClass(mask, 'vjs-no-bottom-mask')
       this.removeClass('vjs-fullscreen');
     }
   }
